@@ -1,0 +1,30 @@
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .vertical-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    flex-direction: column;
+    scroll-snap-align: start;
+  }
+  
+  .horizontal-section {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    flex-direction: row;
+    scroll-snap-align: start;
+  }
+  
+  .horizontal-section, .vertical-section {
+    padding: 20px;
+  }
+  
