@@ -1,11 +1,11 @@
-$primary-color: #3A506B; // Slate Blue
-$secondary-color: #5BC0BE; // Soft Teal
-$accent-color: #F3A683; // Soft Coral
-$background-color: #EAF6F6; // Light Mint
-$text-color: #1C2541; // Deep Blue
+$primary-color: #1F2937; // Dark Blue
+$secondary-color: #3B82F6; // Blue
+$accent-color: #2563EB; // Accent Blue
+$background-color: #F9FAFB; // Light Gray
+$text-color: #111827; // Dark Text
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: $background-color;
   color: $text-color;
   margin: 0;
@@ -13,48 +13,45 @@ body {
 }
 
 .landing-page-container {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 80px;
+  padding: 20px;
 }
 
 .hero-section {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 80px 5%;
-  background-color: $primary-color;
-  color: $text-color;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background: url('/assets/undraw_secure_server_re_8wsq.svg') no-repeat center center / cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 60px;
 
   .hero-content {
     flex: 1;
     h1 {
-      font-family: 'Poppins', sans-serif;
       font-size: 48px;
+      font-weight: 700;
       margin-bottom: 20px;
-      color: #fff;
+      color: $primary-color;
     }
     p {
       font-size: 20px;
-      margin-bottom: 40px;
-      color: #fff;
+      margin-bottom: 30px;
+      color: $primary-color;
     }
     .cta-button {
       padding: 15px 30px;
-      background-color: $accent-color;
+      background-color: $secondary-color;
       color: #fff;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: darken($accent-color, 10%);
-        transform: scale(1.1);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        background-color: $accent-color;
       }
     }
   }
@@ -66,153 +63,138 @@ body {
     img {
       max-width: 100%;
       height: auto;
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
   }
 }
 
-.zigzag-section, .vertical-section {
+.feature-section {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  padding: 80px 5%;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  margin-bottom: 40px;
+  padding: 80px 0;
 
-  &:nth-child(even) {
-    flex-direction: row-reverse;
-    background-color: $secondary-color;
-    color: #fff;
-
-    .cta-button {
-      background-color: $accent-color;
-
-      &:hover {
-        background-color: darken($accent-color, 10%);
-      }
-    }
-  }
-
-  &.vertical-section {
-    flex-direction: column;
+  .feature-item {
+    width: 30%;
+    margin-bottom: 40px;
     text-align: center;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 40px 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    .section-image {
-      margin-top: 40px;
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-icon {
+      margin-bottom: 20px;
 
       img {
-        max-width: 80%;
-        margin: 0 auto;
+        opacity: 1;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transform: scale(1);
       }
     }
-  }
-
-  .section-content {
-    flex: 1;
-    padding-right: 20px;
 
     h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 36px;
-      margin-bottom: 20px;
+      font-size: 24px;
+      margin-bottom: 15px;
       color: $primary-color;
     }
-    p {
-      font-size: 18px;
-      margin-bottom: 40px;
-    }
-    .cta-button {
-      padding: 15px 30px;
-      background-color: $accent-color;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 
-      &:hover {
-        background-color: darken($accent-color, 10%);
-        transform: scale(1.1);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      }
+    p {
+      font-size: 16px;
+      color: $primary-color;
     }
   }
+}
 
-  .section-image {
-    flex: 1;
-    text-align: center;
+.testimonial-section {
+  text-align: center;
+  padding: 80px 0;
+  background-color: $secondary-color;
+  color: #fff;
+  border-radius: 15px;
+  margin-bottom: 60px;
 
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
+  h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.5;
   }
 }
 
 .contact-section {
-  padding: 80px 5%;
-  background-color: $primary-color;
-  color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 60px 5%;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
   h2 {
-    font-family: 'Poppins', sans-serif;
     font-size: 36px;
     margin-bottom: 20px;
-    color: #fff;
+    color: $primary-color;
   }
+
   p {
     font-size: 18px;
     margin-bottom: 40px;
-    color: #fff;
+    color: $primary-color;
+  }
+
+  img {
+    max-width: 60%;
+    height: auto;
+    margin-bottom: 40px;
   }
 
   form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     input, textarea {
+      width: 80%;
       padding: 15px;
       margin-bottom: 15px;
       border: 1px solid $secondary-color;
-      border-radius: 5px;
+      border-radius: 8px;
       font-size: 16px;
     }
 
     button {
-      padding: 15px;
+      padding: 15px 30px;
       background-color: $accent-color;
       color: #fff;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      transition: background-color 0.3s ease;
 
       &:hover {
         background-color: darken($accent-color, 10%);
-        transform: scale(1.05);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       }
     }
   }
 }
 
 @media (max-width: 768px) {
-  .hero-section, .zigzag-section, .vertical-section {
+  .hero-section, .feature-section, .contact-section {
     flex-direction: column;
 
-    .section-content, .section-image, .hero-content, .hero-image {
+    .hero-content, .feature-item, .contact-content {
       padding: 20px 0;
     }
   }
 
-  .zigzag-section {
-    flex-direction: column;
+  .feature-item {
+    width: 100%;
   }
 }
