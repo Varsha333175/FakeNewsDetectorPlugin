@@ -1,0 +1,39 @@
+.custom-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #FF8C94; /* Soft Coral */
+    color: #1E3A5F; /* Dark Slate Blue */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .logo span {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .nav-links a {
+    color: #1E3A5F; /* Dark Slate Blue */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #56B4E9; /* Bright Teal */
+  }
+  
