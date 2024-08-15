@@ -20,27 +20,33 @@ body {
 
 .hero-section {
   display: flex;
+  flex-direction: column; // Center the content vertically
   align-items: center;
-  justify-content: space-between;
-  padding: 80px 5%;
-  background: url('/assets/undraw_secure_server_re_8wsq.svg') no-repeat center center / cover;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 5%;
+  background-color: $background-color;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   margin-bottom: 60px;
 
   .hero-content {
-    flex: 1;
+    max-width: 600px;
+    margin-bottom: 20px;
+
     h1 {
       font-size: 48px;
       font-weight: 700;
       margin-bottom: 20px;
       color: $primary-color;
     }
+
     p {
       font-size: 20px;
       margin-bottom: 30px;
       color: $primary-color;
     }
+
     .cta-button {
       padding: 15px 30px;
       background-color: $secondary-color;
@@ -57,24 +63,48 @@ body {
   }
 
   .hero-image {
-    flex: 1;
-    text-align: center;
+    max-width: 300px;
+    margin-top: 30px;
 
     img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
+      animation: pulse 2s infinite; // Adding a subtle pulsing animation
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      }
     }
   }
 }
 
 .feature-section {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 80px 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 60px 5%;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 60px;
 
   .feature-item {
-    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
     margin-bottom: 40px;
     text-align: center;
     background-color: #fff;
@@ -109,11 +139,20 @@ body {
       color: $primary-color;
     }
   }
+
+  .eye-icon {
+    width: 100px;
+    margin-bottom: 20px;
+
+    img {
+      animation: pulse 3s infinite alternate;
+    }
+  }
 }
 
 .testimonial-section {
   text-align: center;
-  padding: 80px 0;
+  padding: 80px 5%;
   background-color: $secondary-color;
   color: #fff;
   border-radius: 15px;
@@ -188,6 +227,7 @@ body {
 @media (max-width: 768px) {
   .hero-section, .feature-section, .contact-section {
     flex-direction: column;
+    text-align: center;
 
     .hero-content, .feature-item, .contact-content {
       padding: 20px 0;
