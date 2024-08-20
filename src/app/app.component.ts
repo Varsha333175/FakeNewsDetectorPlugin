@@ -17,67 +17,50 @@ export class AppComponent implements AfterViewInit {
 
   initAnimations(): void {
     // Hero section animations
-    gsap.from('.hero-content h1', {
+    gsap.from('.hero-content', {
       opacity: 0,
-      y: -100,
-      duration: 2,
-      ease: 'power4.out',
-    });
-
-    gsap.from('.hero-content p', {
-      opacity: 0,
-      y: -80,
-      duration: 2,
-      ease: 'power4.out',
-      delay: 0.3,
+      y: -50,
+      duration: 1, // Increased speed
+      ease: 'power3.out',
     });
 
     gsap.from('.hero-image img', {
       opacity: 0,
-      scale: 0.7,
-      duration: 2,
+      scale: 0.8,
+      duration: 1, // Increased speed
       ease: 'elastic.out(1, 0.75)',
     });
 
     // Feature sections animation on scroll
-    gsap.utils.toArray('.feature-item').forEach((item: any, i: number) => {
-      gsap.from(item, {
+    const sections = gsap.utils.toArray('.feature-item') as Element[];
+
+    sections.forEach((section: Element, i: number) => {
+      const content = section.querySelector('.feature-content') as HTMLElement;
+      const image = section.querySelector('.feature-image img') as HTMLImageElement;
+
+      gsap.from(content, {
         opacity: 0,
-        y: i % 2 === 0 ? 100 : -100,
-        duration: 1.5,
+        x: i % 2 === 0 ? -100 : 100,
+        duration: 1, // Increased speed
         ease: 'power3.out',
         scrollTrigger: {
-          trigger: item,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
+          trigger: section,
+          start: 'top 80%',
+          toggleActions: 'play none none reset', // Ensures animation plays every time
         }
       });
-    });
 
-    // Testimonial section animation
-    gsap.from('.testimonial-section', {
-      opacity: 0,
-      y: 100,
-      duration: 2,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '.testimonial-section',
-        start: 'top 80%',
-        toggleActions: 'play none none none',
-      }
-    });
-
-    // Contact section animation
-    gsap.from('.contact-section', {
-      opacity: 0,
-      y: 100,
-      duration: 2,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '.contact-section',
-        start: 'top 80%',
-        toggleActions: 'play none none none',
-      }
+      gsap.from(image, {
+        opacity: 0,
+        x: i % 2 === 0 ? 100 : -100,
+        duration: 1, // Increased speed
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 80%',
+          toggleActions: 'play none none reset', // Ensures animation plays every time
+        }
+      });
     });
 
     // Continuous animations
@@ -85,28 +68,37 @@ export class AppComponent implements AfterViewInit {
   }
 
   initContinuousAnimations(): void {
+    // Hero Image rotation with smooth scaling
+    gsap.to('.hero-image img', {
+      rotation: 360,
+      scale: 1.05,
+      duration: 10, // Increased speed
+      repeat: -1,
+      ease: 'linear',
+    });
+
     // Gentle pulsating effect on CTA buttons
     gsap.to('.cta-button', {
-      scale: 1.07,
-      duration: 2,
+      scale: 1.05,
+      duration: 1, // Increased speed
       repeat: -1,
       yoyo: true,
       ease: 'power1.inOut',
     });
 
     // Floating effect on images in feature sections
-    gsap.to('.feature-icon img', {
+    gsap.to('.feature-image img', {
       y: -10,
-      duration: 2.5,
+      duration: 1, // Increased speed
       repeat: -1,
       yoyo: true,
       ease: 'power1.inOut',
     });
 
-    // Subtle text animation for feature section titles
+    // Subtle text animation
     gsap.to('.feature-content h2', {
       y: -5,
-      duration: 1.5,
+      duration: 1, // Increased speed
       repeat: -1,
       yoyo: true,
       ease: 'power1.inOut',
