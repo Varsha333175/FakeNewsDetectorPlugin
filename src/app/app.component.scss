@@ -308,22 +308,36 @@ h1, h2, h3, h4, h5, h6 {
       box-shadow: 15px 15px 45px rgba(0, 0, 0, 0.15), -15px -15px 45px #ffffff;
     }
 
-    &.primary-card {
-      background-color: $primary-color;
+    &.rating-1 {
+      background-color: #f94144; /* Red for 1-star rating */
     }
 
-    &.secondary-card {
-      background-color: $secondary-color;
+    &.rating-2 {
+      background-color: #f3722c; /* Orange for 2-star rating */
     }
 
-    &.accent-card {
-      background-color: $accent-color;
+    &.rating-3 {
+      background-color: #f8961e; /* Yellow for 3-star rating */
+    }
+
+    &.rating-4 {
+      background-color: #90be6d; /* Green for 4-star rating */
+    }
+
+    &.rating-5 {
+      background-color: #43aa8b; /* Teal for 5-star rating */
     }
 
     .icon {
       font-size: 50px;
       color: #ffffff;
       margin-bottom: 20px;
+    }
+
+    .rating {
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 10px;
     }
 
     p {
@@ -345,32 +359,37 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
 .contact-section {
-  padding: 80px 5%;
-  background-color: $primary-color;
+  padding: 100px 5%;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(28, 200, 138, 0.9));
   color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin-top: 60px;
+  margin-top: 80px;
+  position: relative;
 
   h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
     margin-bottom: 20px;
+    color: #fff;
   }
 
   p {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 40px;
+    color: #e0e0e0;
   }
 
   img {
-    margin-bottom: 30px;
-    animation: bounce 2s infinite;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 40px;
+    animation: float 4s ease-in-out infinite;
 
-    @keyframes bounce {
+    @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
@@ -380,29 +399,35 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 
     input, textarea {
+      width: 100%;
       padding: 15px;
       margin-bottom: 15px;
-      border: 1px solid $secondary-color;
-      border-radius: 5px;
+      border: none;
+      border-radius: 8px;
       font-size: 16px;
-      width: 100%;
-      max-width: 500px;
-      transition: border-color 0.3s ease;
+      background-color: #f0f0f0;
+      color: #333;
+      box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, transform 0.3s ease;
 
       &:focus {
-        border-color: darken($secondary-color, 10%);
+        background-color: #e0e0e0;
+        transform: scale(1.02);
         outline: none;
       }
     }
 
     button {
-      padding: 15px 30px;
+      padding: 15px 40px;
       background-color: $accent-color;
       color: #fff;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.3s ease;
 
