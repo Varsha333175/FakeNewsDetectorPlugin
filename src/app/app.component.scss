@@ -1,8 +1,12 @@
-$primary-color: #4E73DF; // Soft Blue
+// Updated color variables
+$primary-color: #3b82f6; // Vibrant Blue
 $secondary-color: #1CC88A; // Fresh Mint Green
 $accent-color: #FF6B6B; // Coral Red
 $background-color: #F8F9FC; // Light Grayish White
 $text-color: #2E2E2E; // Dark Gray
+
+// Import the new fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -13,6 +17,13 @@ body {
   overflow-x: hidden;
 }
 
+// Update typography for headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: $primary-color;
+}
+
+// Other elements
 .landing-page-container {
   width: 100%;
   max-width: 1200px;
@@ -25,7 +36,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 80px 5%;
-  background: linear-gradient(135deg, #4E73DF 0%, #1CC88A 100%);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.7) 0%, rgba(28, 200, 138, 0.7) 100%), url('/path/to/your/video-or-image.jpg');
+  background-size: cover;
+  background-blend-mode: overlay;
   position: relative;
   color: #fff;
   border-radius: 10px;
@@ -54,7 +67,7 @@ body {
     z-index: 1;
 
     h1 {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 48px;
       margin-bottom: 20px;
       color: #fff;
@@ -101,6 +114,7 @@ body {
     }
   }
 }
+// Repeat similar changes for other sections if needed
 
 .feature-section {
   display: flex;
@@ -185,16 +199,17 @@ body {
   align-items: center;
   text-align: center;
   padding: 80px 5%;
-  background-color: $secondary-color;
-  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6 0%, #1CC88A 100%);
+  border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 60px;
+  position: relative;
 
   .eye-image {
-    max-width: 200px;
+    max-width: 350px;
     margin-bottom: 20px;
 
-    img {
+    lottie-player {
       width: 100%;
       height: auto;
     }
@@ -202,16 +217,20 @@ body {
 
   .eye-content {
     h2 {
-      font-size: 24px;
+      font-size: 28px;
       color: #fff;
+      margin-bottom: 10px;
     }
 
     p {
-      font-size: 16px;
-      color: #fff;
+      font-size: 18px;
+      color: #f0f0f0;
+      max-width: 600px;
+      margin: 0 auto;
     }
   }
 }
+
 
 .testimonial-section {
   padding: 80px 5%;
@@ -297,21 +316,21 @@ body {
       }
     }
   }
+}
 
-  .trusted-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
+.trusted-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
 
-    img {
-      margin: 0 20px;
-      max-width: 100px;
-      transition: transform 0.3s ease;
+  img {
+    margin: 0 20px;
+    max-width: 100px;
+    transition: transform 0.3s ease;
 
-      &:hover {
-        transform: scale(1.1);
-      }
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }

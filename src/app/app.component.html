@@ -1,15 +1,31 @@
 <div class="landing-page-container">
-  <header class="hero-section">
-    <div class="particle-background"></div>
-    <div class="hero-content">
-      <h1>Secure Your Online Experience</h1>
-      <p>Protect your browsing with state-of-the-art encryption and moderation tools.</p>
-      <button class="cta-button">Get Started</button>
-    </div>
-    <div class="hero-image">
-      <img src="/undraw_secure_server_re_8wsq.svg" alt="Secure Server">
-    </div>
-  </header>
+  <div class="landing-page-container">
+    <header class="hero-section">
+      <div class="particle-background"></div>
+      <div class="hero-content">
+        <h1>Secure Your Online Experience</h1>
+        <p>Protect your browsing with state-of-the-art encryption and moderation tools.</p>
+        <button class="cta-button">Get Started</button>
+      </div>
+      <div class="hero-image">
+        <!-- Lottie animation with fallback image -->
+        <lottie-player
+  src="/Animation - 1724179812509.json"
+  background="transparent"
+  speed="1"
+  style="width: 500px; height: 500px; display: block; margin: 0 auto;"
+  loop
+  autoplay
+  onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<img src=\'/undraw_secure_server_re_8wsq.svg\' alt=\'Fallback Image\' style=\'width: 500px; height: 500px; display: block; margin: 0 auto;\'>');"
+></lottie-player>
+
+      </div>
+    </header>
+  
+    <!-- Other sections remain unchanged -->
+  
+  </div>
+  
 
   <section class="feature-section">
     <div class="feature-item left">
@@ -45,13 +61,22 @@
 
   <section class="eye-section">
     <div class="eye-image">
-      <img src="/undraw_surveillance_re_8tkl.svg" alt="Content Moderation">
+      <!-- Lottie animation for the eye -->
+      <lottie-player
+        src="/eye.json"
+        background="transparent"
+        speed="1"
+        style="width: 350px; height: 350px;"
+        loop
+        autoplay
+      ></lottie-player>
     </div>
     <div class="eye-content">
       <h2>Our Mission: Ethical Content Moderation</h2>
       <p>We focus on replacing harmful content with ethical advertising, ensuring a safer browsing experience for all.</p>
     </div>
   </section>
+  
 
   <section class="testimonial-section">
     <h2>What Our Users Say</h2>

@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -9,7 +9,13 @@ gsap.registerPlugin(ScrollTrigger);
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnInit {
+
+  ngOnInit(): void {
+    if (typeof window !== 'undefined') {
+      import('@lottiefiles/lottie-player');  // Dynamic import for the lottie-player
+    }
+  }
 
   ngAfterViewInit(): void {
     this.initAnimations();

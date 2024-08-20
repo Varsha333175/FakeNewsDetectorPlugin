@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -24,12 +24,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatToolbarModule, // Import Angular Material modules here
+    MatToolbarModule, 
     MatButtonModule
   ],
   providers: [
     provideAnimationsAsync()
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],  // Add this line
   bootstrap: [AppComponent]
 })
 export class AppModule { }
