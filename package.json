@@ -2,13 +2,12 @@
   "name": "fake-news-detector",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "node --max-old-space-size=512 dist/fake-news-detector/server/main.js",
-    "build": "ng build --configuration=production --aot",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:fake-news-detector": "node dist/fake-news-detector/server/main.js"
-  },
+  "ng": "ng",
+  "start": "ng serve",
+  "build": "ng build --configuration=production --aot",
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test"
+},
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.1.0",
