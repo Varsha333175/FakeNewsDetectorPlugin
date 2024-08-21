@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
+  title = 'fake-news-detector';
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
